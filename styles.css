@@ -65,7 +65,7 @@ input {
 button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background: #aa1945;
+  background: #98042d;
   color: #fff;
   border-radius: 5px;
 }
@@ -82,4 +82,5 @@ p#message {
 img {
   margin: auto;
   width: 60%;
+  height: 10rem;
 }

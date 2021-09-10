@@ -13,11 +13,13 @@ const compareValues = (sum, luckyNum) => {
   if (sum % luckyNum == 0) {
     //console.log("lucky");
     luckyGif.style.display = "block";
+    unluckGif.style.display = "none";
     showMessage("Congrats your birth date is lucky!!🎉");
   } else {
     //console.log("unlucky");
 
     unluckGif.style.display = "block";
+    luckyGif.style.display = "none";
     showMessage("Sorry, not lucky enough 😪");
   }
 };
@@ -30,9 +32,9 @@ const checkBirthdayIsLucky = () => {
   const dob = dateOfBirth.value;
 
   if (dob == "") {
-    showMessage("Please enter yout birthdate");
+    showMessage("Please enter your details.");
     hideImage();
-  } else if (luckyNum.value == "") {
+  } else if (luckyNum.value == 0 || luckyNum.value == "") {
     showMessage("Please enter your lucky Number");
     hideImage();
   } else {
@@ -52,4 +54,13 @@ const calculateSum = (dob) => {
   return sum;
 };
 
-checkBtn.addEventListener("click", checkBirthdayIsLucky);
+luckyNum.addEventListener("keydown", (e) => {
+  if (e.key == "-") {
+    showMessage("Please enter positive number.");
+    hideImage();
+  } else {
+    checkBtn.addEventListener("click", checkBirthdayIsLucky);
+  }
+});
+
+//checkBtn.addEventListener("click", checkBirthdayIsLucky);
