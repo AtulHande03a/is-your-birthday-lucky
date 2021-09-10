@@ -5,22 +5,40 @@ const unluckGif = document.getElementById("unlucky-image");
 const luckyGif = document.getElementById("lucky-image");
 const message = document.getElementById("message");
 
+const showMessage = (msg) => {
+  message.textContent = msg;
+};
+//compare dob and lucky number
 const compareValues = (sum, luckyNum) => {
   if (sum % luckyNum == 0) {
     //console.log("lucky");
-    unluckGif.style.display = "block";
-    message.textContent = "Congrats your birth date is lucky!!🎉";
+    luckyGif.style.display = "block";
+    showMessage("Congrats your birth date is lucky!!🎉");
   } else {
     //console.log("unlucky");
-    luckyGif.style.display = "block";
-    message.textContent = "Sorry, not lucky enough 😪";
+
+    unluckGif.style.display = "block";
+    showMessage("Sorry, not lucky enough 😪");
   }
+};
+const hideImage = () => {
+  luckyGif.style.display = "none";
+  unluckGif.style.display = "none";
 };
 
 const checkBirthdayIsLucky = () => {
   const dob = dateOfBirth.value;
-  const sum = calculateSum(dob);
-  compareValues(sum, luckyNum.value);
+
+  if (dob == "") {
+    showMessage("Please enter yout birthdate");
+    hideImage();
+  } else if (luckyNum.value == "") {
+    showMessage("Please enter your lucky Number");
+    hideImage();
+  } else {
+    const sum = calculateSum(dob);
+    compareValues(sum, luckyNum.value);
+  }
 };
 
 //adding the number together in date
