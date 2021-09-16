@@ -6,17 +6,22 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #fbf6f3;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Merriweather";
+  background-color: #1dc690;
 }
 
 .container {
-  max-width: 100%;
-  width: 600px;
-
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   font-family: "Merriweather";
   font-size: 1rem;
+  margin: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
 }
 
 h1 {
@@ -57,7 +62,7 @@ input {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border: 2px solid #bf3880;
-  border-radius: 0.25rem;
+  border-radius: 10px;
   margin-bottom: 1rem;
 }
 
@@ -66,7 +71,7 @@ button {
   font-size: 1rem;
   background: #98042d;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 button:hover {
@@ -84,27 +89,29 @@ img {
   height: 8rem;
 }
 .note {
-  color: #67595e;
+  color: black;
+  font-weight: 700;
   border: 2px solid #a49393;
   padding: 2px;
   font-size: 16px;
 }
 /*footer*/
-
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1rem 0;
-  background-color: cornflowerblue;
+  margin-top: auto;
+  padding: 0.5rem;
+  background-color: #0e86d4;
+  width: 100vw;
 }
+
 li {
   list-style-type: none;
-  margin-left: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 ul {
@@ -115,4 +122,14 @@ footer a {
   color: black;
   font-size: 1.5rem;
   padding: 0 0.7rem;
+}
+
+.footer-heading {
+  line-height: 50%;
+  font-weight: 700;
+  padding: 5px;
+  color: black;
+}
+footer a:hover {
+  color: #f54d3d;
 }
