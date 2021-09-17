@@ -133,3 +133,11 @@ footer a {
 footer a:hover {
   color: #f54d3d;
 }
+
+@media screen and (min-width: 700px) {
+  img {
+    margin: auto;
+    width: auto;
+    height: 8rem;
+  }
+} ;

@@ -34,8 +34,11 @@ const checkBirthdayIsLucky = () => {
   if (dob == "") {
     showMessage("Please enter your details.");
     hideImage();
-  } else if (luckyNum.value == 0 || luckyNum.value == "") {
+  } else if (luckyNum.value === 0 || luckyNum.value === "") {
     showMessage("Please enter your lucky Number");
+    hideImage();
+  } else if (Math.sign(luckyNum.value) === -1) {
+    showMessage("Please enter positive value of lucky number.");
     hideImage();
   } else {
     const sum = calculateSum(dob);
@@ -54,13 +57,15 @@ const calculateSum = (dob) => {
   return sum;
 };
 
+/*
 luckyNum.addEventListener("keydown", (e) => {
   if (e.key == "-") {
     showMessage("Please enter positive number.");
     hideImage();
-  } else {
-    checkBtn.addEventListener("click", checkBirthdayIsLucky);
-  }
+    
+  } 
 });
-
 //checkBtn.addEventListener("click", checkBirthdayIsLucky);
+*/
+
+checkBtn.addEventListener("click", checkBirthdayIsLucky);
